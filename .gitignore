@@ -1,3 +1,12 @@
+_docker-config
+.git
+package-lock.json
+# 一応
+.*
+
+
+##auto added-->
+
 # Logs
 logs
 *.log

@@ -1,0 +1,74 @@
+{
+	"source": "src/posts",
+	"destination": "output",
+	"metadata": {
+		"title": "this is title",
+		"description": "this is a discription"
+		},
+	
+	"plugins": [{
+		"@metalsmith/drafts": {
+			"default": false
+			},
+		
+		"@metalsmith/default-values": [{
+			"pattern": "**/*",
+			"defaults": {
+				"layout": "blog.hbs",
+				"link": "blog",
+				"auther": "hiyoko Prod. sekaii"
+				}
+			}],
+		
+		"metalsmith-highlight": {},
+		
+		"metalsmith-handlebars-contents": {
+			"match": "**"
+			},
+		
+		"@metalsmith/markdown": {
+			"pedantic": false,
+			"gfm": true,
+			"tables": true,
+			"breaks": false,
+			"sanitize": false,
+			"smartLists": true,
+			"smartypants": false,
+			"xhtml": false
+			},
+		
+		"metalsmith-asciidoctor": {},
+		
+		"@metalsmith/permalinks": {
+			"pattern": ":link/:title"
+			},
+		
+		"@metalsmith/collections":{
+			"blogs": {
+				"sortBy": "date",
+				"reverse": true
+				}
+			},
+		
+		"metalsmith-layouts": {
+			"directory": "src/layouts"
+			},
+				
+		"@metalsmith/table-of-contents": {
+			"levels": [2,3],
+			"anchor": "add",
+			"root": null
+			},
+		
+		"metalsmith-tags": {
+			"handle": "tags",
+			"path": "tags/:tag/index.html",
+			"layout": "src/tag.hbt",
+			"normalize": true,
+			"sortBy": "date",
+			"reverse": true,
+			"skipMetadata": false,
+			"metadataKey": null
+			}
+		}]
+	}
