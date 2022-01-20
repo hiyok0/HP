@@ -1,4 +1,5 @@
 _docker-config
+output
 .git
 package-lock.json
 # 一応
