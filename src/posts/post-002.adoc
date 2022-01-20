@@ -24,7 +24,7 @@ layout:
 * collection: {{collection}} 
 * tags:
 	{{#each tags}} 
-	** {{}} 
+	** {{this}} 
 	{{/each}}
 * date: {{date}} 
 * layout: {{layout}} 
