@@ -70,7 +70,8 @@
 					"match": {"link":"topPage"},
 					"pattern": "./"
 					}
-				]
+				],
+			"rerative": false
 			},
 		
 		"@metalsmith/collections":{
