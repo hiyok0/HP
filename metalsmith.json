@@ -65,7 +65,7 @@
 					"pattern": "blogs/:date/:title",
 					"date": "YYYY"
 					},{
-					"match" {"link":"page"},
+					"match": {"link": "page"},
 					"pattern": "pages/:title"
 					},{
 					"match": {"link":"topPage"},
