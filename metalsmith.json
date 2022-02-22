@@ -57,8 +57,6 @@
 		"metalsmith-asciidoctor": {},
 		
 		"@metalsmith/permalinks": {
-			"pattern": "patttern-undefined/:date/:title",
-			"date": "mmddyyyy",
 			"linksets": [
 					{
 					"match": { "link": "blog" },
