@@ -16,12 +16,29 @@
 			"defaults": {
 				"layout": "blog.hbs",
 				"link": "blog",
-				"auther": "hiyoko Prod. sekaii"
+				"auther": "hiyoko"
 				}
 			}],
 		
 		"metalsmith-highlight": {},
 		
+		"metalsmith-discover-helpers": {
+			"directory": "src/layouts"
+			},
+		
+		"metalsmith-tags": {
+			"handle": "tags",
+			"path": "tags/:tag/index.html",
+			"pathPage": "tags/:tag/:num/index.html",
+			"perPage": 25,
+			"layout": "tags.hbs",
+			"normalize": true,
+			"sortBy": "date",
+			"reverse": true,
+			"skipMetadata": false,
+			"metadataKey": null
+			},
+
 		"metalsmith-handlebars-contents": {
 			"match": "**"
 			},
@@ -40,11 +57,25 @@
 		"metalsmith-asciidoctor": {},
 		
 		"@metalsmith/permalinks": {
-			"pattern": ":link/:title"
+			"pattern": "patttern-undefined/:date/:title",
+			"date": "mmddyyyy",
+			"linksets": [
+					{
+					"match": { "link": "blog" },
+					"pattern": "blogs/:date/:title",
+					"date": "YYYY"
+					},{
+					"match" {"link":"page"},
+					"pattern": "pages/:title"
+					},{
+					"match": {"link":"topPage"},
+					"pattern": ""
+					}
+				]
 			},
 		
 		"@metalsmith/collections":{
-			"blogs": {
+			"blog": {
 				"sortBy": "date",
 				"reverse": true
 				}
@@ -58,17 +89,8 @@
 			"levels": [2,3],
 			"anchor": "add",
 			"root": null
-			},
-		
-		"metalsmith-tags": {
-			"handle": "tags",
-			"path": "tags/:tag/index.html",
-			"layout": "src/tag.hbt",
-			"normalize": true,
-			"sortBy": "date",
-			"reverse": true,
-			"skipMetadata": false,
-			"metadataKey": null
 			}
+		
+
 		}]
 	}

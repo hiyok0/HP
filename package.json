@@ -17,6 +17,7 @@
     "jstransformer-handlebars": "^1.2.0",
     "metalsmith": "^2.3.0",
     "metalsmith-asciidoctor": "^1.1.2",
+    "metalsmith-discover-helpers": "^0.1.1",
     "metalsmith-handlebars-contents": "^1.1.0",
     "metalsmith-highlight": "^1.0.4",
     "metalsmith-layouts": "^2.3.1",

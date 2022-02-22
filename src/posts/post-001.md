@@ -4,7 +4,7 @@ collection: blog
 tags: blog, test
 date: 2012-08-20
 layout: blog.hbs
-link: blog/
+link: blog
 ---
 
 # これは最初の投稿です。
