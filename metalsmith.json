@@ -57,6 +57,7 @@
 		"metalsmith-asciidoctor": {},
 		
 		"@metalsmith/permalinks": {
+			"date": "YYYY",
 			"linksets": [
 					{
 					"match": { "link": "blog" },
@@ -67,7 +68,7 @@
 					"pattern": "pages/:title"
 					},{
 					"match": {"link":"topPage"},
-					"pattern": ""
+					"pattern": "/"
 					}
 				]
 			},
