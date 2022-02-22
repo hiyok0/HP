@@ -68,7 +68,7 @@
 					"pattern": "pages/:title"
 					},{
 					"match": {"link":"topPage"},
-					"pattern": "/"
+					"pattern": "./"
 					}
 				]
 			},
