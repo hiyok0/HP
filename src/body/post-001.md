@@ -21,4 +21,4 @@ link: blog
     * 自動でコンパイルもかけてくれます。
 
 # 画像テスト
-![icon](/../assets/icon.png)
+![icon](/assets/icon.png)
