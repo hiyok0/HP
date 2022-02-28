@@ -1,5 +1,6 @@
 ---
 title: my-1st-post
+titleJa: １番目の投稿
 collection: blog
 tags: blog, test
 date: 2012-08-20

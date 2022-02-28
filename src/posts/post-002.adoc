@@ -1,5 +1,6 @@
 ---
 title: my-2nd-post
+titleJa: ２番めの投稿
 collection: blog
 tags: blog, test2
 date: 2012-08-20

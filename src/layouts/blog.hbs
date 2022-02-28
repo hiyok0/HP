@@ -1,10 +1,17 @@
 <html>
 <head>
-	<title>これは投稿です。</title>
+	{{> defaultHead }}
+	<title>{{ titleJa }} - hiyokoのblog</title>
 </head>
 <body>
+	<header>{{> header }}</header>
 	<div style="background-color: #EDF7FF;">
-	<h1>{{ title }}</h1>
+	<h1>{{ titleJa }}</h1>
+	<i class="ri-price-tag-3-line"></i>
+	{{#each tags}} 
+		<A href="/tags/{{name}}">{{name}}</A>
+	{{/each}}
   {{{ contents }}}
+	</div>
 </body>
 </html>

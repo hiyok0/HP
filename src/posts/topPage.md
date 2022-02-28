@@ -1,10 +1,10 @@
 ---
-title: hiyokoBlog
+title: 
+titleJa: hiyokoBlog
 collection: 
-tags: blog, test
 date: 2012-08-20
 layout: blog.hbs
-link: topPage
+link: home
 ---
 
 # hiyokoのblogへようこそ！

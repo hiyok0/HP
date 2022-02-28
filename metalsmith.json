@@ -25,6 +25,10 @@
 		"metalsmith-discover-helpers": {
 			"directory": "src/layouts"
 			},
+		 "metalsmith-discover-partials": {
+			  "directory": "src/layouts",
+			  "pattern": ".hbs$"
+			},
 		
 		"metalsmith-tags": {
 			"handle": "tags",
@@ -67,7 +71,10 @@
 					"match": {"link": "page"},
 					"pattern": "pages/:title"
 					},{
-					"match": {"link":"topPage"},
+					"match": {"link": "top"},
+					"pattern": "./:title"
+					},{
+					"match": {"link":"home"},
 					"pattern": "./"
 					}
 				],
@@ -81,7 +88,7 @@
 				}
 			},
 		
-		"metalsmith-layouts": {
+		"@metalsmith/layouts": {
 			"directory": "src/layouts"
 			},
 				

@@ -11,6 +11,7 @@
     "@metalsmith/collections": "^1.1.0",
     "@metalsmith/default-values": "^3.0.2",
     "@metalsmith/drafts": "^1.1.1",
+    "@metalsmith/layouts": "^2.4.0",
     "@metalsmith/markdown": "^1.4.0",
     "@metalsmith/permalinks": "^2.3.0",
     "@metalsmith/table-of-contents": "^1.0.0",
@@ -19,9 +20,9 @@
     "metalsmith-asciidoctor": "^1.1.2",
     "metalsmith-assets": "^0.1.0",
     "metalsmith-discover-helpers": "^0.1.1",
+    "metalsmith-discover-partials": "^0.1.2",
     "metalsmith-handlebars-contents": "^1.1.0",
     "metalsmith-highlight": "^1.0.4",
-    "metalsmith-layouts": "^2.3.1",
     "metalsmith-tags": "^2.1.0"
   }
 }
