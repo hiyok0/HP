@@ -16,7 +16,9 @@
 			"defaults": {
 				"layout": "blog.hbs",
 				"link": "blog",
-				"auther": "hiyoko"
+				"collection": "blog",
+				"auther": "hiyoko",
+				"toc": true
 				}
 			}],
 		
@@ -42,10 +44,6 @@
 			"skipMetadata": false,
 			"metadataKey": null
 			},
-
-		"metalsmith-handlebars-contents": {
-			"match": "**"
-			},
 		
 		"@metalsmith/markdown": {
 			"pedantic": false,
@@ -59,6 +57,16 @@
 			},
 		
 		"metalsmith-asciidoctor": {},
+		
+		"@metalsmith/table-of-contents": {
+			"levels": [2,3],
+			"anchor": "add",
+			"root": null
+			},
+
+		"metalsmith-handlebars-contents": {
+			"match": "**"
+			},
 		
 		"@metalsmith/permalinks": {
 			"date": "YYYY",
@@ -84,18 +92,13 @@
 		"@metalsmith/collections":{
 			"blog": {
 				"sortBy": "date",
-				"reverse": true
+				"reverse": true,
+				"refer": true
 				}
 			},
 		
 		"@metalsmith/layouts": {
 			"directory": "src/layouts"
-			},
-				
-		"@metalsmith/table-of-contents": {
-			"levels": [2,3],
-			"anchor": "add",
-			"root": null
 			},
 		
 		 "metalsmith-assets": {

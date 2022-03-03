@@ -1,4 +1,10 @@
-<h1>Posts for {{tag}}</h1>
-<ul>{{#each pagination.files}}
-	<li><small>{{dateFormat date "DD/MM/YYYY"}}</small> <a href=/blogs/{{dateFormat date "YYYY"}}/{{title}}>{{title}}</a></li>
-{{/each}}</ul>{{#if pagination.previous}}<a href="{{pagination.previous.path}}">Previous</a>{{/if}}{{#if pagination.next}}<a href="{{pagination.next.path}}">Next</a>{{/if}}
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<head>{{> defaultHead }}</head>
+<body>
+	<header>{{> header }}</header>
+	<h1>Blog(s) for <i class="ri-price-tag-3-line" style="position: relative; top: 0.15em;"></i><em>{{tag}}</em></h1>
+	<ul>{{#each pagination.files}}
+		<li><small>{{dateFormat date "YYYY/MM/DD"}}</small> <a href=/blogs/{{dateFormat date "YYYY"}}/{{title}}>{{titleJa}}</a></li>
+	{{/each}}</ul>{{#if pagination.previous}}<a href="{{pagination.previous.path}}">Previous</a>{{/if}}{{#if pagination.next}}<a href="{{pagination.next.path}}">Next</a>{{/if}}
+	<footer>{{> footer }}</footer>
+</body>

@@ -1,17 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"￥>
 <html>
 <head>
 	{{> defaultHead }}
 	<title>{{ titleJa }} - hiyokoのblog</title>
 </head>
 <body>
-	<header>{{> header }}</header>
-	<div style="background-color: #EDF7FF;">
+	<header>
+		<div style="
+			background-color: #ffe5f2;
+			display			: inline-block;
+			width			: 100%
+		">
+		{{> header }}
+		</div>
+	</header>
+	<div style="
+			background-color: #EDF7FF;
+			display			: inline-block;
+			width			: 100%
+		">
 	<h1>{{ titleJa }}</h1>
+	<div>
 	<i class="ri-price-tag-3-line"></i>
 	{{#each tags}} 
 		<A href="/tags/{{name}}">{{name}}</A>
 	{{/each}}
-  {{{ contents }}}
 	</div>
+	<span style="background-color: #ffe5f2; display:inline-block; padding-right: 1.6rem;">
+		<h2 style="text-align: center;">ToC</h2>
+		{{{ toc }}}
+	</span>
+	{{{ contents }}}
+	</div>
+	<footer>{{> footer }}</footer>
 </body>
 </html>
