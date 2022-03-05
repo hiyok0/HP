@@ -1,14 +1,14 @@
 ---
-title: my-1st-post
-titleJa: １番目の投稿
+title: my-3rd-post
+titleJa: ３番目の投稿
 collection: blog
 tags: blog, test
-date: 2012-08-10
+date: 2012-08-30
 layout: blog.hbs
 link: blog
 ---
 
-## これは最初の投稿です。
+## これは三番目の投稿です。
 
 * これはリストですこれはリストです
 * これはリストですこれはリストです
@@ -21,5 +21,16 @@ link: blog
     * マークダウンでかけます。
     * 自動でコンパイルもかけてくれます。
 
-## 画像テスト
-![icon](/assets/icon.png)
+## コードブロックテスト
+```python
+	print('This is a code block')
+	print('The block must be preceded by a blank line')
+	print('Then indent at least 4 spaces or 1 tab')
+	print('Nesting does nothing. Your code is displayed Literally')
+```
+
+## Getting the Source Code
+
+MacDown is hosted on GitHub:  
+https://github.com/MacDownApp/macdown  
+Here you can get the source code, read through the issues and start contributing.

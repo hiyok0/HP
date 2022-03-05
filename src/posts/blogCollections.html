@@ -1,0 +1,20 @@
+---
+title: blogs
+titleJa: ブログ一覧
+collection: home
+date: 2012-09-03
+layout: simple.hbs
+link: top
+---
+
+新しい投稿が上にあります。
+<!--記事が増えたらコメントアウト解除
+多分本当に全部あるのでここから古い記事を探すのはおすすめしませんが、探す場合は各ブラウザに搭載されているページ内検索をご活用ください。
+-->
+<ul>
+	{{#each collections.blog}}
+		<li>
+			<a href="/{{path}}"><strong>{{ titleJa }}</strong> - {{dateFormat date "MMM Do YYYY"}}</a>
+		</li>
+	{{/each}}
+</ul>

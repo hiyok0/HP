@@ -18,11 +18,10 @@
 				"link": "blog",
 				"collection": "blog",
 				"auther": "hiyoko",
+				"description": "著者が入力をサボりました。なので説明はありません。",
 				"toc": true
 				}
 			}],
-		
-		"metalsmith-highlight": {},
 		
 		"metalsmith-discover-helpers": {
 			"directory": "src/layouts"
@@ -58,14 +57,12 @@
 		
 		"metalsmith-asciidoctor": {},
 		
+		"metalsmith-highlight": {},
+		
 		"@metalsmith/table-of-contents": {
 			"levels": [2,3],
 			"anchor": "add",
 			"root": null
-			},
-
-		"metalsmith-handlebars-contents": {
-			"match": "**"
 			},
 		
 		"@metalsmith/permalinks": {
@@ -95,6 +92,11 @@
 				"reverse": true,
 				"refer": true
 				}
+			},
+			
+		"metalsmith-handlebars-contents": {
+			"helpers": ["src/layouts/dateFormat.js"],
+			"match": "**"
 			},
 		
 		"@metalsmith/layouts": {

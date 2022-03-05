@@ -2,9 +2,38 @@
 <head>{{> defaultHead }}</head>
 <body>
 	<header>{{> header }}</header>
-	<h1>Blog(s) for <i class="ri-price-tag-3-line" style="position: relative; top: 0.15em;"></i><em>{{tag}}</em></h1>
-	<ul>{{#each pagination.files}}
-		<li><small>{{dateFormat date "YYYY/MM/DD"}}</small> <a href=/blogs/{{dateFormat date "YYYY"}}/{{title}}>{{titleJa}}</a></li>
-	{{/each}}</ul>{{#if pagination.previous}}<a href="{{pagination.previous.path}}">Previous</a>{{/if}}{{#if pagination.next}}<a href="{{pagination.next.path}}">Next</a>{{/if}}
+	<h1>Blog(s) index of <i class="ri-price-tag-3-line"></i><em>{{tag}}</em></h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<th><!--no icon--></th>
+				<th>date</th>
+				<th>title</th>
+			</tr>
+			<tr>
+				<th colspan="3"><hr /></th>
+			</tr>
+		</thead>
+		<tbody>
+			<td><i class="ri-arrow-go-back-fill" style="transform: roateX ( 180deg );"></i></td>
+			<td><A href="/blogs/">Blog Top</A></td>
+			{{#each pagination.files}}
+			<tr>
+				<td><i class="ri-pages-line"></i></td>
+				<td><a href=/blogs/{{dateFormat date "YYYY"}}/{{title}}>{{titleJa}}</a></td>
+				<td>{{dateFormat date "YYYY/MM/DD"}}</td>
+			<tr>
+			{{/each}}
+		</tbody>
+	</table>
+	
+	{{#if pagination.previous}}
+		<a href="{{pagination.previous.path}}">Previous</a>
+	{{/if}}
+	{{#if pagination.next}}
+		<a href="{{pagination.next.path}}">Next</a>
+	{{/if}}
+	
 	<footer>{{> footer }}</footer>
 </body>

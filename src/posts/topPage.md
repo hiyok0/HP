@@ -1,9 +1,9 @@
 ---
 title: 
 titleJa: hiyokoBlog
-collection: 
-date: 2012-08-20
-layout: blog.hbs
+collection: home
+date: 2012-08-19
+layout: simple.hbs
 link: home
 ---
 

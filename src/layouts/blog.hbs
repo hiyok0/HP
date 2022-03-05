@@ -6,13 +6,7 @@
 </head>
 <body>
 	<header>
-		<div style="
-			background-color: #ffe5f2;
-			display			: inline-block;
-			width			: 100%
-		">
 		{{> header }}
-		</div>
 	</header>
 	<div style="
 			background-color: #EDF7FF;
@@ -26,11 +20,28 @@
 		<A href="/tags/{{name}}">{{name}}</A>
 	{{/each}}
 	</div>
-	<span style="background-color: #ffe5f2; display:inline-block; padding-right: 1.6rem;">
+	<span style="background-color: #f7f7f7; display:inline-block; padding-right: 1.6rem;">
 		<h2 style="text-align: center;">ToC</h2>
 		{{{ toc }}}
 	</span>
 	{{{ contents }}}
+	
+	<!--
+	前後の記事へのリンク
+	collectionの仕様と推奨上、前後が逆-->
+	<div style="text-align: center;">
+	{{#if next}}
+	←<a href="/{{ next.path }}">{{ next.titleJa }}</a>
+	{{/if}}
+	{{#if next}}{{#if previous}}
+	｜
+	{{/if}}{{/if}}
+	{{#if previous}}
+	<a href="/{{ previous.path }}">{{ previous.titleJa }}</a>→
+	
+	{{/if}}
+	</div>
+	
 	</div>
 	<footer>{{> footer }}</footer>
 </body>
