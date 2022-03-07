@@ -11,11 +11,12 @@ link: top
 <!--記事が増えたらコメントアウト解除
 多分本当に全部あるのでここから古い記事を探すのはおすすめしませんが、探す場合は各ブラウザに搭載されているページ内検索をご活用ください。
 -->
-<br />何かしらページが出来てきたら整備する、それまで中身のない<code>ul</code>タグは許してクレメンス。
-<ul>
+<ul id="list">
 	{{#each collections.page}}
 		<li>
 			<a href="/{{path}}"><strong>{{ titleJa }}</strong> - {{dateFormat date "MMM Do YYYY"}}</a>
 		</li>
+	{{else}}
+		No page.
 	{{/each}}
 </ul>
