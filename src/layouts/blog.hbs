@@ -15,12 +15,32 @@
 		">
 	<h1>{{ titleJa }}</h1>
 	<div>
-	<i class="ri-price-tag-3-line"></i>
+	<A href="https://github.com/Remix-Design/remixicon/blob/master/License" class="ri-price-tag-3-line"></A>
 	{{#each tags}} 
 		<A href="/tags/{{name}}">{{name}}</A>
 	{{/each}}
 	</div>
-	<span style="background-color: #f7f7f7; display:inline-block; padding-right: 1.6rem;">
+	
+	{{#if cautionJS}}
+	<div style="
+		background-color: yellow;
+		padding: 1.5rem;
+		border: solid 0.2rem red;
+		border-radius: 1.5em;
+		width: 20rem;
+		max-width 90%;
+		margin-right: auto;
+	">
+	このページにはjavascriptが含まれている可能性があります。実行されるのが嫌な人はブラウザの設定から解除するなど自分で対応してください。
+	</div>
+	{{/if}}
+	
+	<span style=
+		"background-color: #f7f7f7;
+		 display:inline-block;
+		 padding-right: 1.6rem;
+		 border-radius: 1.5em;
+	">
 		<h2 style="text-align: center;">ToC</h2>
 		{{{ toc }}}
 	</span>

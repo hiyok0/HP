@@ -9,6 +9,7 @@ link: top
 
 ## このブログについて
 後で書く。
+私が書いた文に関しては再利用できるようにしておきたいけれど引用やギリギリ引用みたいなのを含みそうだからおおっぴらには言いにくい。
 
 ## hiyokoについて
 ### 名前の由来
@@ -16,3 +17,7 @@ link: top
 
 ### twitter、SNS他
 後で書く。<a href="https://knoow.jp/@/404">とりあえずここを見て</a>
+
+### アイコンなど
+アイコンの一部に[<i class="ri-remixicon-fill"></i>Remix icon](https://github.com/Remix-Design/RemixIcon)を利用しています。  
+使い方わかんなくて下線がうまく消せない（）。

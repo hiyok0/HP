@@ -8,19 +8,26 @@ link: home
 ---
 
 <style>
+	.cellLink td{
+		width : 8rem;
+		}
 	.cellLink a{
 		display: block;
-		width: 100%;
+		width: 12rem;
 		height: 100%;
 		}
 	.cellLink a:hover{
+		background-color:snow;
+		}
+	.cellLink a:active{
 		background-image: url("/assets/6colorRainbowA.gif");
 		background-size: 100% 100%;
+		color: snow;
 		}
 </style>
 
 <h2>最近の投稿</h2>
-<table border="1">
+<p><table border="1">
 	<thead><tr><th colspan="2">
 	blog（最新５件）
 	</th></tr></thead>
@@ -48,6 +55,54 @@ link: home
 
 	</tbody>
 	<tfoot><tr><td colspan="2">
-	投稿の合計が５に満たない場合は多分表示がバグります。
+	投稿の合計が５に満たない場合は多分表示がバグります。<br />
+	表示が見にくいのは仕様です。
 	</td></tr></tfoot>
-</table>
+</table></p>
+<p><table border="1">
+	<thead><tr><th colspan="2">
+	page（最新５件）
+	</th></tr></thead>
+	<tbody class="cellLink">
+		<tr>
+			<td><a href="/{{collections.page.0.path}}">{{ collections.page.0.titleJa }}</a></td>
+			<td>{{dateFormat collections.page.0.date "MMM Do YYYY"}}</td>
+		</tr>
+		<tr>
+			<td><a href="/{{collections.page.1.path}}">{{ collections.page.1.titleJa }}</a></td>
+			<td>{{dateFormat collections.page.1.date "MMM Do YYYY"}}</td>
+		</tr>
+		<tr>
+			<td><a href="/{{collections.page.2.path}}">{{ collections.page.2.titleJa }}</a></td>
+			<td>{{dateFormat collections.page.2.date "MMM Do YYYY"}}</td>
+		</tr>
+		<tr>
+			<td><a href="/{{collections.page.3.path}}">{{ collections.page.3.titleJa }}</a></td>
+			<td>{{dateFormat collections.page.3.date "MMM Do YYYY"}}</td>
+		</tr>
+		<tr>
+			<td><a href="/{{collections.page.4.path}}">{{ collections.page.4.titleJa }}</a></td>
+			<td>{{dateFormat collections.page.4.date "MMM Do YYYY"}}</td>
+		</tr>
+
+	</tbody>
+	<tfoot><tr><td colspan="2">
+	投稿の合計が５に満たない場合は多分表示がバグります。<br />
+	表示が見にくいのは仕様です。
+	</td></tr></tfoot>
+</table></p>
+
+<h2>既知の問題</h2>
+<h3>そのうち対応するかもしれないし、しないかもしれないもの。</h3>
+	<p><ul>
+	<li>404等のページがない</li>
+	<li>記事数が少ない</li>
+	<li>虹のアニメーションがgifアニメーション</li>
+	<li>画面幅の大きいウィンドウでは読みにくい気がする。本文の最大幅が決まっていない。</li>
+	</ul></p><!--ここで100行-->
+<h3>対応する気があんまりないもの</h3>
+	<p><ul>
+	<li>CSSファイルが外部に分離されてない</li>
+	<li>あまりにもリッチじゃなさすぎる</li>
+	<li>tagページは背景色が<code>snow</code>なので、CRTの場合はちらつくかもしれない。</li>
+	</ul></p>
