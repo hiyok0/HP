@@ -8,11 +8,7 @@
 	<header>
 		{{> header }}
 	</header>
-	<div style="
-			background-color: #EDF7FF;
-			display			: inline-block;
-			width			: 100%
-		">
+	<div class="body">
 	<h1>{{ titleJa }}</h1>
 	<div>
 	<A href="https://github.com/Remix-Design/remixicon/blob/master/License" class="ri-price-tag-3-line"></A>
@@ -21,17 +17,29 @@
 	{{/each}}
 	</div>
 	
+	<table style="width:100%">
+		<tr>
+			<td>投　稿　日：{{dateFormat date "YYYY/MM/DD"}}</td>
+			<td style="text-align:right;">書いた人：{{author}}</td>
+		</tr>
+		<tr>
+			<td style="padding-right:1.5rem;">最終更新日：{{#if update}}{{dateFormat update "YYYY/MM/DD"}}{{else}}{{dateFormat date "YYYY/MM/DD"}}{{/if}}</td>
+			<td style="text-align:right;"><A href="https://github.com/Remix-Design/remixicon/blob/master/License" class="ri-share-line"></A>Share{{> shareBtn }}</td>
+		</tr>
+	</table>
+	
 	{{#if cautionJS}}
 	<div style="
 		background-color: yellow;
 		padding: 1.5rem;
 		border: solid 0.2rem red;
 		border-radius: 1.5em;
-		width: 20rem;
+		width: 40rem;
+		max-width:75%;
 		max-width 90%;
-		margin-right: auto;
+		margin: 0 auto;
 	">
-	このページにはjavascriptが含まれている可能性があります。実行されるのが嫌な人はブラウザの設定から解除するなど自分で対応してください。
+	このページにはjavascriptが含まれている可能性があります。実行されるのが嫌な人はブラウザの設定から解除するなど自分で対応してください。もう遅いけど。
 	</div>
 	{{/if}}
 	
@@ -45,7 +53,6 @@
 		{{{ toc }}}
 	</span>
 	{{{ contents }}}
-	
 	<!--
 	前後の記事へのリンク
 	collectionの仕様と推奨上、前後が逆-->

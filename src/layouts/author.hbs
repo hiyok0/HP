@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<head>
+	{{> defaultHead }}
+	<title>{{ author }}の投稿 - hiyokoのHP</title>
+</head>
+<body style="background-color: snow;">
+	<header>{{> header }}</header>
+	<h1>Post(s) index of <i class="ri-user-fill"></i>{{ author }}</h1>
+	
+	<table>
+		<thead>
+			<tr>
+				<th><!--no icon--></th>
+				<th>title</th>
+				<th>type</th>
+				<th>date</th>
+			</tr>
+			<tr>
+				<th colspan="100"><hr /></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><i class="ri-arrow-go-back-fill"></i></td>
+				<td><A href="/">Home Page</A></td>
+			</tr>
+			{{#each pagination.files}}
+			<tr>
+				<td><i class="ri-pages-line"></i></td>
+				<td><a href=/{{path}}>{{titleJa}}</a></td>
+				<td>{{ collection }}</td>
+				<td>{{dateFormat date "YYYY/MM/DD"}}</td>
+			<tr>
+			{{/each}}
+		</tbody>
+	</table>
+	
+	{{#if pagination.previous}}
+		<a href="{{pagination.previous.path}}">Previous</a>
+	{{/if}}
+	{{#if pagination.next}}
+		<a href="{{pagination.next.path}}">Next</a>
+	{{/if}}
+	
+	<footer>{{> footer }}</footer>
+</body>

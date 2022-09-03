@@ -17,8 +17,8 @@
 				"layout": "blog.hbs",
 				"link": "blog",
 				"collection": "blog",
-				"auther": "hiyoko",
-				"description": "著者が入力をサボりました。なので説明はありません。",
+				"author": "hiyoko",
+				"overview": "著者が入力をサボりました。なので概要はありません。",
 				"toc": true,
 				"cautionJS": false
 				}
@@ -44,7 +44,7 @@
 			"skipMetadata": false,
 			"metadataKey": null
 			},
-		
+			
 		"@metalsmith/markdown": {
 			"pedantic": false,
 			"gfm": true,

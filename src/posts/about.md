@@ -2,7 +2,7 @@
 title: about
 titleJa: このブログとその主について
 collection: home
-date: 2012-08-26
+date: 2022-03-05
 layout: simple.hbs
 link: top
 ---
