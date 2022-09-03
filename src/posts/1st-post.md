@@ -6,7 +6,6 @@ tags: blog,metalsmith,node,markdown,asciidoctor
 date: 2022-03-08
 layout: blog.hbs
 link: blog
-cautionJS: true
 ---
 
 ## これは最初の投稿です。

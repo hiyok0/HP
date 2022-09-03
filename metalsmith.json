@@ -19,8 +19,7 @@
 				"collection": "blog",
 				"author": "hiyoko",
 				"overview": "著者が入力をサボりました。なので概要はありません。",
-				"toc": true,
-				"cautionJS": false
+				"toc": true
 				}
 			}],
 		
