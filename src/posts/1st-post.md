@@ -4,6 +4,7 @@ titleJa: ブログ作りました
 collection: blog
 tags: blog,metalsmith,node,markdown,asciidoctor
 date: 2022-03-08
+update: 2022-09-04
 layout: blog.hbs
 link: blog
 ---
@@ -16,7 +17,8 @@ link: blog
 ## このブログで直近で書きそうな内容
 * このブログの仕様
 * Minecraftのマルチサーバー
-* Oracle Cloud Infrastructure(OCI)のAlways Freeプラン（arm）
+* ~~Oracle Cloud Infrastructure(OCI)のAlways Freeプラン（arm）~~
+	* 契約どころかアカウント作成の段階で躓いた。（2022年9月4日追記）
 
 ## pageってなんだよ
 　自分のdiscordサーバーのルールを明文化したり、javascriptをブラウザで実行したくなったりしたときに使うかもしれない場所。
