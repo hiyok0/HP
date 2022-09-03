@@ -24,5 +24,5 @@ link: blog
 　自分のdiscordサーバーのルールを明文化したり、javascriptをブラウザで実行したくなったりしたときに使うかもしれない場所。
 
 ## とりあえず書いておく簡単なこのブログの仕組み
-　GitHubで原稿もレイアウトも管理しています。[metalsmith](https://www.metalsmith.io/)というSSGをつかい、md、asciidoctor、htmlでの記述が現時点で可能です。基本的にはmdで書いていくと思います。気になったことがあれば気軽にTwitterとかで聞いてください。リプに飢えてます。  
+　GitHubで原稿もレイアウトも管理しています。[metalsmith](https://www.metalsmith.io/)というSSGをつかい、md、asciidoctor、htmlでの記述が現時点で可能です。基本的にはmdで書いていくと思います。気になったことがあれば気軽に[Twitter](https://twitter.com/Jewel_Flash)とかで聞いてください。リプに飢えてます。  
 <iframe width="480px" height="420px" frameBorder="0" src="https://twitter-profile-embed.vercel.app?username=Jewel_Flash" />
