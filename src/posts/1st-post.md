@@ -1,6 +1,7 @@
 ---
 title: my-1st-post
 titleJa: ブログ作りました
+overview: 初めての投稿です。
 collection: blog
 tags: blog,metalsmith,node,markdown,asciidoctor
 date: 2022-03-08
