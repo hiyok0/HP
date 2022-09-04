@@ -105,8 +105,8 @@
 			},
 		
 		 "metalsmith-assets": {
-			"source": "src/assets",
-			"destination": "./assets"
+			"source": "src/static",
+			"destination": "./"
 			}
 
 		}]
