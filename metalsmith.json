@@ -70,7 +70,7 @@
 			"linksets": [
 					{
 					"match": { "link": "blog" },
-					"pattern": "blogs/:date/:title",
+					"pattern": "blog/:date/:title",
 					"date": "YYYY"
 					},{
 					"match": {"link": "page"},
