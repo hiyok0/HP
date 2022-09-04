@@ -1,2 +1,2 @@
-# test-myBlogWithMetalsmith
-testing
+# このリポジトリについて
+ブログを始めてみたかった。
