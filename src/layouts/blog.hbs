@@ -5,7 +5,22 @@
 	<title>{{ titleJa }} - hiyokoのblog</title>
 	{{> ogpTagExceptOgImage }}
 	<meta property="og:image" content="https://og-image.eyemono.moe/{{titleJa}}.png?pattern=none&md=0&fontSize=75px&textColor=%238340BB&overlay=https%3A%2F%2Fplacehold.jp%2F48%2F3d4070%2F3f3f3f%2F1200x630.png%3Ftext%3Dby%2520{{author}}%26css%3D%257B%2522border-radius%2522%253A%252215px%2522%252C%2522background-image%2522%253A%2522%2520url%28https%253A%252F%252Fhiyoko.pages.dev%252Fassets%252Fogp-background.png%29%2522%252C%2522vertical-align%2522%253A%2522bottom%2522%257D">
-
+	<style>
+		div.metaData{
+			display: flex;
+			justify-content: space-between;
+		}
+		.body table, .body td {
+			border: 1px solid black;
+		}
+		.body thead, .body tfoot {
+			background-color: black;
+			color: #EDF7FF;
+		}
+		.body table{
+			margin: 0 auto;
+		}
+	</style>
 </head>
 <body>
 	<header>
@@ -20,16 +35,16 @@
 	{{/each}}
 	</div>
 	
-	<table style="width:100%">
-		<tr>
-			<td>投　稿　日：{{dateFormat date "YYYY/MM/DD"}}</td>
-			<td style="text-align:right;">書いた人：{{author}}</td>
-		</tr>
-		<tr>
-			<td style="padding-right:1.5rem;">最終更新日：{{#if update}}{{dateFormat update "YYYY/MM/DD"}}{{else}}{{dateFormat date "YYYY/MM/DD"}}{{/if}}</td>
-			<td style="text-align:right;"><A href="https://github.com/Remix-Design/remixicon/blob/master/License" class="ri-share-line"></A>Share{{> shareBtn }}</td>
-		</tr>
-	</table>
+	<div style="width:100%;" class="metaData">
+		<div>
+			<div>投　稿　日：{{dateFormat date "YYYY/MM/DD"}}</div>
+			<div style="padding-right:1.5rem;">最終更新日：{{#if update}}{{dateFormat update "YYYY/MM/DD"}}{{else}}{{dateFormat date "YYYY/MM/DD"}}{{/if}}</div>
+		</div>
+		<div>
+			<div style="text-align:right;">書いた人：{{author}}</div>
+			<div style="text-align:right;"><A href="https://github.com/Remix-Design/remixicon/blob/master/License" class="ri-share-line"></A>Share{{> shareBtn }}</div>
+		</div>
+	</div>
 	
 	<span style=
 		"background-color: #f7f7f7;
