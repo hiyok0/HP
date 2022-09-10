@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<!--Last Update: 0.2.0-->
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+</head>
+<body> 
+	<style>
+		#aaaaa{display: none;}
+		#app {font-size: 32px;}
+		.notWrite{display:none;}
+		#app{
+			display:flex;
+			flex-wrap: wrap;
+			justify-content: flex-start;
+		}
+		metaInfo{
+			/*width: 20rem;*/
+			min-width: 15rem;
+			max-width: 100vw;
+			min-height: 3.5rem;
+			padding: 0.125em 0.125em 0.125em 0.25em;
+			margin: 0.125em 0.5em 0.125em 0;
+			border-radius: 0.8em;
+			overflow:hidden;
+		}
+		div.eachMetaInfo .common .title{
+			//white-space: nowrap;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 1;
+			wodth:100%;
+			overflow: hidden;
+			text-overflow:ellipsis;
+		}
+		#app span.key:after{
+			content: "："
+		}
+	</style> 
+	<script>
+		const main = {
+			"gather": function(raw){
+				switch(raw.type){
+					
+					//type:meta
+					case "meta": //ここでの取得がメイン
+						//Object.assign(this.data[data[data][service][id]],raw.data);
+						const onecommeStreamUUID = raw.data.service.id;
+						if(raw.data.service.enabled){
+							//if(Object.hasOwn(this.data, onecommeStreamUUID)){}else{
+							if(this.data.hasOwnProperty(onecommeStreamUUID)){}else{
+								this.data[onecommeStreamUUID] = {};
+							}
+							Object.assign(this.data[onecommeStreamUUID],{
+								"onecommeStreamUUID": raw.data.service.id,
+								"onecommeStreamScreenName": raw.data.service.name,
+								"onecommeStreamColor": (raw.data.service.color ? 
+									"#"+raw.data.service.color.r.toString(16).padStart( 2, '0')+raw.data.service.color.g.toString(16).padStart( 2, '0')+raw.data.service.color.b.toString(16).padStart( 2, '0')
+									: "black"
+								),
+								"write": raw.data.service.write
+							});
+							Object.assign(this.data[onecommeStreamUUID],raw.data.data);
+						}else{
+							//if(Object.hasOwn(this.data, onecommeStreamUUID)){
+							if(this.data.hasOwnProperty(onecommeStreamUUID)){
+								this.data[onecommeStreamUUID] = {};
+							}
+						}
+						break;
+						
+					//type:connected
+					case "connected":
+						//4.0で試したときに実装予定
+						//本当は良くない気がするけどとりあえずtype:metaのコピペで作成
+						if(raw.data.services){for(const metaData of raw.data.services){
+							const onecommeStreamUUID = metaData.id;
+							if(metaData.enabled){
+								//この中を関数にまとめればいいのかなぁ……？
+								//if(Object.hasOwn(this.data, onecommeStreamUUID)){}else{
+								if(this.data.hasOwnProperty(onecommeStreamUUID)){}else{
+									this.data[onecommeStreamUUID] = {};
+								}
+								Object.assign(this.data[onecommeStreamUUID],{
+									"onecommeStreamUUID": metaData.id,
+									"onecommeStreamScreenName": metaData.name,
+									"onecommeStreamColor": (metaData.color ? 
+										"#"+metaData.color.r.toString(16)+metaData.color.g.toString(16)+metaData.color.b.toString(16)
+										: "black"
+									),
+									"write": metaData.write
+								});
+								//Object.assign(this.data[onecommeStreamUUID],raw.data.data);
+							}else{
+								//if(Object.hasOwn(this.data, onecommeStreamUUID)){
+								if(this.data.hasOwnProperty(onecommeStreamUUID)){
+									this.data[onecommeStreamUUID] = {};
+								}
+							}
+						}}
+						break;
+				}
+			},
+			"data": {},
+			"hontaiElement": document.getElementById("app"),
+			"apply": function(){//setIntervalで呼び出すためここでthis使わない！！
+				for(const onecommeStreamUUID in main.data){
+					
+					//新規の物の場合、中身のないやつを作る
+					if(document.getElementById(onecommeStreamUUID) == null){
+						const newMetaInfoElement = document.createElement("metaInfo");
+						newMetaInfoElement.id = onecommeStreamUUID;
+						document.getElementById("app").appendChild(newMetaInfoElement);
+						console.log("the metaInfo element "+onecommeStreamUUID+" is created for meta infos.");
+						const eachMetaInfoFragment = document.createDocumentFragment();
+						for(const eachMetaInfoClasses of [ //各クラス
+							["youtube", "twitch", "twicas", "mixch", "showroom", "bilibili", "mirrativ", "twitter", "niconama", "name"],
+							["youtube", "twitch", "twicas", "mixch", "showroom", "bilibili", "mirrativ", "twitter", "niconama", "title"],
+							["youtube", "twitch", "twicas", "showroom", "bilibili", "mirrativ", "viewer"],
+							["twicas", "mixch", "mirrativ", "niconama", "total"],
+							["youtube", "upVote"],
+							["twitch", "mixch", "showroom", "follower"],
+							["mixch", "niconama", "points", "gift"],
+							["niconama", "points", "ad"]
+						]){
+							const eachMetaInfoElement = document.createElement("div");
+							eachMetaInfoElement.classList.add("eachMetaInfo");
+							eachMetaInfoElement.classList.add(...eachMetaInfoClasses);
+							eachMetaInfoFragment.appendChild(eachMetaInfoElement)
+						}
+						newMetaInfoElement.appendChild(eachMetaInfoFragment);
+						console.log("the metaInfo's child elements of "+onecommeStreamUUID+" is created!");
+					}
+					
+					//更新or追加
+					for(const dataKey in main.data[onecommeStreamUUID]){
+						//console.log(dataKey);
+						switch(dataKey){
+							//枠の色
+							case "onecommeStreamColor":
+								document.getElementById(onecommeStreamUUID).style.borderLeft = "0.8em solid "+main.data[onecommeStreamUUID][dataKey]
+								break;
+							case "write":
+								if(main.data[onecommeStreamUUID][dataKey] == 
+								document.getElementById(onecommeStreamUUID).classList.contains("notWrite")){
+									if(main.data[onecommeStreamUUID][dataKey]){
+										//document.getElementById(onecommeStreamUUID).classList.add("write");
+										document.getElementById(onecommeStreamUUID).classList.remove("notWrite");
+									}else{
+										//document.getElementById(onecommeStreamUUID).classList.remove("write");
+										document.getElementById(onecommeStreamUUID).classList.add("notWrite");
+									}
+								}
+								break;
+							//枠の名は
+							case "onecommeStreamScreenName":
+								main.writeToTemplate(onecommeStreamUUID,"eachMetaInfo youtube twitch twicas mixch showroom bilibili mirrativ twitter niconama name","枠名",main.data[onecommeStreamUUID][dataKey]);
+								break;
+							//配信タイトル
+							case "title":
+								main.writeToTemplate(onecommeStreamUUID,"eachMetaInfo youtube twitch twicas mixch showroom bilibili mirrativ twitter niconama title","配信タイトル",main.data[onecommeStreamUUID][dataKey]);
+								break;
+							//（現）視聴者数
+							case "viewer":
+								main.writeToTemplate(onecommeStreamUUID,"eachMetaInfo youtube twitch twicas showroom bilibili mirrativ viewer","視聴者数",main.data[onecommeStreamUUID][dataKey].toString(10));
+								break;
+							//総視聴者数
+							case "total":
+								main.writeToTemplate(onecommeStreamUUID,"eachMetaInfo twicas mixch mirrativ niconama total","総視聴者数",main.data[onecommeStreamUUID][dataKey].toString(10));
+								break;
+							//高評価（YouTubeのみ）
+							case "upVote":
+								main.writeToTemplate(onecommeStreamUUID,"eachMetaInfo youtube upVote","高評価",main.data[onecommeStreamUUID][dataKey]);
+								break;
+							//follower（Twitch Showroomのみ）
+							case "follower":
+								main.writeToTemplate(onecommeStreamUUID,"eachMetaInfo twitch mixch showroom follower","フォロワー",main.data[onecommeStreamUUID][dataKey]);
+								break;
+							//ポインツ（ニコニコ生放送のみ）
+							case "points":
+								main.writeToTemplate(onecommeStreamUUID,"eachMetaInfo mixch niconama points gift","ギフト",main.data[onecommeStreamUUID][dataKey].gift.toString(10));
+								main.writeToTemplate(onecommeStreamUUID,"eachMetaInfo niconama points ad","広告",main.data[onecommeStreamUUID][dataKey].ad.toString(10));
+								break;
+							//共通部分（除く：枠の色）
+							default:
+								break;
+						}
+					}
+					
+				}
+			},
+			"writeToTemplate":function (id,classNames,keyTextContent,valueTextContent){
+				const metaInfo = {
+					"element": document.getElementById(id).getElementsByClassName(classNames)[0],
+					"fragments": {
+						"key": document.createElement("span"),
+						"value": document.createElement("span")
+					}
+				}
+				//class
+				metaInfo.fragments.key.classList.add("key", "index");
+				metaInfo.fragments.value.classList.add("value");
+				//textContent
+				metaInfo.fragments.key.textContent = keyTextContent
+				metaInfo.fragments.value.textContent = valueTextContent
+				//if old span element exist, remove them
+				if(metaInfo.element.hasChildNodes()){
+					metaInfo.element.removeChild(metaInfo.element.getElementsByTagName("span")[1]);
+					metaInfo.element.removeChild(metaInfo.element.getElementsByTagName("span")[0]);
+				}
+				//add fragments to the element
+				metaInfo.element.appendChild(metaInfo.fragments.key);
+				metaInfo.element.appendChild(metaInfo.fragments.value);
+			},
+			"applyTimer": 0
+		};
+		main.applyTimer = setInterval(main.apply,2500);
+		//const onecommeWebSocket = new WebSocket("ws://" + (location.host ? location.host : "localhost:11180") + "/sub", "text");
+		const onecommeWebSocket = new WebSocket("ws://localhost:11180/sub", "text");
+		onecommeWebSocket.onmessage = function (event) {
+			main.gather(JSON.parse(event.data));
+			//console.log(main.data);
+		};
+	</script>
+	<div id="aaaaa">
+		あああああ
+	</div>
+	<div id="app">
+		<!--雛形
+		<div id="metaInfo_XXXX-XXXXXXXX……">
+			<div class="eachMetaInfo youtube twitch twicas mixch showroom bilibili mirrativ twitter niconama name"></div>
+			<div class="eachMetaInfo youtube twitch twicas mixch showroom bilibili mirrativ twitter niconama title"></div>
+			<div class="eachMetaInfo youtube twitch twicas showroom bilibili mirrativ viewer"></div>
+			<div class="eachMetaInfo twicas mixch mirrativ niconama total"></div>
+			<div class="eachMetaInfo youtube upVote"></div>
+			<div class="eachMetaInfo twitch mixch showroom follower></div>
+			<div class="eachMetaInfo niconama points gift"></div>
+			<div class="eachMetaInfo mixch niconama points ad"></div>
+		</div>
+		-->	
+		</div>
+	</div>
+</body>
+</html>
+<!--
+setHTML使ってみたいけど対応していなさそう……？
+https://developer.mozilla.org/ja/docs/Web/API/Element/setHTML
+-->
