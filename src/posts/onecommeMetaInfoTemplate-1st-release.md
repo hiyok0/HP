@@ -240,4 +240,9 @@ span.value:before{content: "\300C";}
 span.value:after{content: "\300D\3060\3088";}
 ```
 
+#### いい感じに背景を白っぽくする
+```css
+metaInfo{background-color: rgba(255,255,255,0.3);}
+```
+
 じゃあ！
