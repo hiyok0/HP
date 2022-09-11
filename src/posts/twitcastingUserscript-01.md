@@ -48,4 +48,4 @@ link: blog
     archiveLi.replaceChildren(fragment);
 })();
 ```
-いい感じに動いた。本当は`https://*twitcasting.tv/*`って書いたんだけどどうにも動かんかった。また試す。
+いい感じに動いた。本当は最初、`https://*twitcasting.tv/*`って書いたんだけどどうにも動かんかった。また試す。
