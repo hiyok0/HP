@@ -96,7 +96,7 @@
 			},
 			
 		"metalsmith-handlebars-contents": {
-			"helpers": ["src/layouts/dateFormat.js"],
+			"helpers": ["src/layouts/*.js"],
 			"match": "**",
 			"partials": ["./src/layouts/*"]
 			},

@@ -15,6 +15,7 @@
     "@metalsmith/markdown": "^1.4.0",
     "@metalsmith/permalinks": "^2.3.0",
     "@metalsmith/table-of-contents": "^1.0.0",
+    "image-size": "^1.0.2",
     "jstransformer-handlebars": "^1.2.0",
     "metalsmith": "^2.3.0",
     "metalsmith-asciidoctor": "^1.1.2",
