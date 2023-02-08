@@ -4,7 +4,7 @@ titleJa: img要素の縦横を指定するように
 overview: 画像サイズを指定するためにhelperを作りました。
 collection: blog
 tags: metalsmith, node, helper, handlebars
-date: 2022-12-01
+date: 2023-02-08
 layout: blog.hbs
 link: blog
 ---
