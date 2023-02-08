@@ -7,12 +7,11 @@ tags: metalsmith, node, helper, handlebars
 date: 2022-12-01
 layout: blog.hbs
 link: blog
-draft: true
 ---
 
 ## tl;dr
-　こんなhelperを作り、導入しました。
-//embed code here.
+　こんなhelperを作り、導入しました。  
+<script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Fhiyok0%2FHP%2Fblob%2Ftest%2Fsrc%2Flayouts%2Fimg.js&style=an-old-hope&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on&fetchFromJsDelivr=on"></script>
 
 　こんな感じで指定します。第３引数でloadingを指定可能(省略可能)で、デフォルトがlazyになっています。
 ```
