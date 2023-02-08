@@ -5,6 +5,7 @@ overview: 画像サイズを指定するためにhelperを作りました。
 collection: blog
 tags: metalsmith, node, helper, handlebars
 date: 2023-02-08
+update: 2023-02-09
 layout: blog.hbs
 link: blog
 ---
@@ -23,6 +24,9 @@ link: blog
 
 ## 作ったときの気付き
 　handlebarsを取り込んで、`.SafeString()`しないと`<img>`等がHTMLタグとして機能せず、そのままテキストで表示されてしまうこと。
+
+## 今後
+　A要素との組み合わせもそのままこれでできるようにしてみたいな等
 
 ## 作ったヘルパーについて
 　好きに使っていいです。ただ、そんなめんどくさいことはしてないので自分のサイトにあったものを作成したほうが幸せになれるかも。
