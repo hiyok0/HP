@@ -12,16 +12,15 @@ link: blog
 スクショは真ん中なのにCSSは左寄せ（）
 
 ### しましま
-![しましま](/assets/onecommeForumCss-20220910/simasima.png)
+{{img "/assets/onecommeForumCss-20220910/simasima.png" "しましま"}}
 ```css
 .odd  {background-color:lightpink;}
 .even {background-color:lightgreen;}
 ```
-[コメントの背景色を2色交互にしたい
-](https://forum.onecomme.com/t/topic/589)
+[コメントの背景色を2色交互にしたい](https://forum.onecomme.com/t/topic/589)
 
 ### 一行にしてはみ出た分を「…」表示に
-![文末省略](/assets/onecommeForumCss-20220910/ellipsis.png)
+{{img "/assets/onecommeForumCss-20220910/ellipsis.png" "文末省略"}}
 ```css
 .comment-block{
 	display:flex;
@@ -44,7 +43,7 @@ link: blog
 
 ### LINE風テンプレートの吹き出しの絞ってある部分を消す
 意味あるのかこれ……？
-![吹き出しなし](/assets/onecommeForumCss-20220910/noFukidashi.png)
+{{img "/assets/onecommeForumCss-20220910/noFukidashi.png" "吹き出しなし"}}
 ```css
 .comment-body::before{display: none;}
 ```

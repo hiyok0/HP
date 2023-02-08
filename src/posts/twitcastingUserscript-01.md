@@ -11,41 +11,17 @@ link: blog
 
 ## 動機
 　ツイキャスでアーカイブタブをクリックした時に、
-![アーカイブをクリック](/assets/TwitCastingUserScript/clickArchive.png)
+{{img "/assets/TwitCastingUserScript/clickArchive.png" "アーカイブをクリック"}}
 こんな風に録画のみにアーカイブのみにフィルターされた状態で表示されてしまう
-![録画のみにフィルターされているツイキャスのアーカイブ](/assets/TwitCastingUserScript/filtered.png)
+{{img "/assets/TwitCastingUserScript/filtered.png" "録画のみにフィルターされているツイキャスのアーカイブ"}}
 おそらく、ライブ履歴だったのがアーカイブになったことで録画のみになったのだと思うが、使いにくいことには変わりがない。CSSでは無理そう？だったので、初めてのUserScriptに挑戦してみた。
 
 ## やってみた
 ちょうど、Tampermonkeyがインストールされていたので、ここを押してみた。
-![新規スクリプト](/assets/TwitCastingUserScript/createNewScript.png)
+{{img "/assets/TwitCastingUserScript/createNewScript.png" "新規スクリプト"}}
 すると、エディタが起動したのでポチポチ入れていって、完成したものがこちら。
-![新規スクリプト](/assets/TwitCastingUserScript/editorDone.png)
-```javascript
-// ==UserScript==
-// @name         TwitCastingArchiveLink
-// @namespace
-// @version      0.1
-// @description  元の仕様に戻す（日本語環境にのみ対応）
-// @author       hiyoko
-// @match        https://twitcasting.tv/*
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
-// @grant        none
-// ==/UserScript==
+{{img "/assets/TwitCastingUserScript/editorDone.png" "新規スクリプト"}}
 
-(function() {
-    'use strict';
-
-    // Your code here...
-    const fragment = document.createDocumentFragment();
-    const archiveLi = document.getElementsByClassName("tw-user-nav-list-item")[1];
-    const archiveSpan = document.getElementsByClassName("tw-user-nav-list-count")[0];
-    const modifiedA = document.createElement("A");
-    modifiedA.setAttribute('href', location.origin + "/" + location.pathname.split("/",2)[1] +"/archive?type=history");
-    modifiedA.textContent = "アーカイブ";
-    modifiedA.appendChild(archiveSpan);
-    fragment.appendChild(modifiedA);
-    archiveLi.replaceChildren(fragment);
-})();
-```
+<script src="https://gist.github.com/hiy0ko/7c3003ceae71d266ef2f0a66a36fbad6.js"></script>
+2023-02-09追記：ためしにGitHub Gistにしてみた。  
 いい感じに動いた。本当は最初、`https://*twitcasting.tv/*`って書いたんだけどどうにも動かんかった。また試す。

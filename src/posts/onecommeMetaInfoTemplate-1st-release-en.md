@@ -5,12 +5,13 @@ overview: The Template displays viewer or other meta infos gotten by OneComme is
 collection: blog
 tags: blog,onecomme,html,css,javascript,English
 date: 2022-09-11
+update: 2023-02-09
 layout: blog.hbs
 link: blog
 ---
 ## Overview & DL
 ### What's this?
-![non customized screenshot](/assets/onecommeMetaInfoTemplate/hero.png)  
+{{img "/assets/onecommeMetaInfoTemplate/hero.png" "non-customized screenshot"}} 
 This template displays viewer or other meta infos. <red>**PRO version**</red> of [OneComme](https://onecomme.com/) is needed for using this. For details of OneComme's PRO version, see [OneComme's Docs（ja_JP）](https://onecomme.com/docs/pro).
 
 ### Download
@@ -30,8 +31,7 @@ md5: 98f2bb02424730f1894c85c72d504dd8
 1. Download this template. 
 2. (ZIP Only)Unzip
 3. Drag and drop HTML file you've gotten to sence(s) of OBS Studio.
-4. Start OneComme and livestream(s).![Screenshot of opening folder.](/assets/onecommeMetaInfoTemplate/openFolder.webp)
-5. 
+4. Start OneComme and livestream(s).{{img "/assets/onecommeMetaInfoTemplate/openFolder.webp" "Screenshot of opening folder"}}
 
 ### Adding to template list of OneComme
 1. Download this template. 
@@ -63,11 +63,11 @@ Each div element has 2 span elements and One is index, another is value. Index e
 ### Index and value
 * Index
 	* Having *index* and *key* of classes.
-	![span.index](/assets/onecommeMetaInfoTemplate/mark-index.png)
+	{{img "/assets/onecommeMetaInfoTemplate/mark-index.png" "span.index"}}
 	
 * Value
 	* Having *value* of class. 
-![項目名を指している画像](/assets/onecommeMetaInfoTemplate/mark-value.png)
+{{img "/assets/onecommeMetaInfoTemplate/mark-value.png" "span.value"}}
 
 ## I've used up all of my energy.
 ![I'll write more later.](https://placehold.jp/80/dddddd/000000/700x120.png?text=I'll%20write%20more%20later.)

@@ -17,7 +17,7 @@ draft: true
 * コメント部分の背景を透明にして、文字の後ろだけ白背景。
 * コメント順を（標準と）反対に
 
-![コメント部分の背景を透明にして、文字の後ろだけ白背景](/assets/onecommeCSS-2022-09-12/ktx-quick-starter-01.png)
+{{img "/assets/onecommeCSS-2022-09-12/ktx-quick-starter-01.png" "コメント部分の背景を透明にして、文字の後ろだけ白背景"}}
 
 ```css
 .container {

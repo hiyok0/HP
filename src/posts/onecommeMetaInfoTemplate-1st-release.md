@@ -11,7 +11,7 @@ link: blog
 
 ## 概要・ダウンロード
 ### これは何？
-![デフォルト状態のテンプレートのスクリーンショット](/assets/onecommeMetaInfoTemplate/hero.png)  
+{{img "/assets/onecommeMetaInfoTemplate/hero.png" "デフォルト状態のテンプレートのスクリーンショット"}}  
 　わんコメで視聴者数などの情報を表示することができるテンプレートです。<red>**利用にはPRO版が必要です。**</red>PRO版の詳細については[わんコメ公開ドキュメントのPRO版についてのページ](https://onecomme.com/docs/pro)を御覧ください。
 
 ### ダウンロード（0.2.0）
@@ -57,7 +57,7 @@ md5: 98f2bb02424730f1894c85c72d504dd8
 * 標準では書き出しがONになっている放送についてのみ表示します。
 * CSSを利用することで、より柔軟に放送、項目ごとの制御が可能です。
 
-![書き出しの設定](/assets/onecommeMetaInfoTemplate/write.png)
+{{img "/assets/onecommeMetaInfoTemplate/write.png" "書き出しの設定"}}
 
 ## カスタマイズ
 　インスペクタが使える人はそれ見てポチポチしてたほうが多分早い（断言）。もし難しい場合は気軽に聞いてください。物によってはCSSの例に追加するかもしれません。
@@ -70,14 +70,14 @@ md5: 98f2bb02424730f1894c85c72d504dd8
 * 項目名
 	* indexとkeyの２つのクラスが振ってある。
 	* 下記画像の左側部分（囲ってある部分）。
-![項目名を指している画像](/assets/onecommeMetaInfoTemplate/mark-index.png)
+{{img "/assets/onecommeMetaInfoTemplate/mark-index.png" "項目名を指している画像"}}
 　　　　　　　　　　　　　　　　　　　　　　　　　　
 
 * 値・データ
 	* valueというクラスが振ってある。
 	* 良い名称が思い浮かばなかった。
 	* 下記画像の右側部分（囲ってある部分）。
-![項目名を指している画像](/assets/onecommeMetaInfoTemplate/mark-value.png)
+{{img "/assets/onecommeMetaInfoTemplate/mark-value.png" "項目名を指している画像"}}
 
 #### 少し特殊なclass
 * 全ての項目についている
