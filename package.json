@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "make": "./node_modules/metalsmith/bin/metalsmith"
   },
   "author": "hiyoko",
   "dependencies": {
