@@ -1,6 +1,7 @@
 _docker-config
 output
 .git
+.DS_Store
 
 
 ##auto added-->
