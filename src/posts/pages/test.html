@@ -1,0 +1,24 @@
+---
+title: comment-json-viewer-001
+titleJa: comment.json閲覧器@0.0.1
+overview: わんコメのcomment.jsonを見やすくしてみたかった。
+collection: page
+tags: onecomme, json, javascript, html
+date: 2023-02-17
+layout: app.hbs
+link: page
+---
+<link href="/assets/commentJsonViewer/main.css" rel="stylesheet">
+<div id="dropzone" class="main">
+	<h1>{{ titleJa }}</h1>
+	<div id="discription">
+		<p>わんコメのcomment.jsonを見やすく表示します。<A href="https://onecomme.com/docs/developer/comment-json">comment.jsonの保存場所は公式ドキュメントをご確認ください。</A></p>
+		<p>このツールは、嗜好領域さんの<A href=https://cheerzon.jpn.org/for_onecomme/comments_view.drop>comments.log Viewer</A>に影響を受けて作りました（自白）。</p>
+	</div>
+	<div id="drophere">
+		<div class="drophere-text">ここにcomment.jsonをドロップ<i class="ri-drag-drop-line"></i></div>
+		<div class="drophere-text">もしくはこの辺をクリック<i class="ri-cursor-fill"></i></div>
+	</div>
+</div>
+<input id="userfile" type="file" hidden="true" />
+<script src="/assets/commentJsonViewer/main.js"></script>

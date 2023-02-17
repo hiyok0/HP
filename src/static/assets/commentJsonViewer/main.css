@@ -1,0 +1,46 @@
+html{
+	min-width: 600px;
+	min-height: 710px;
+
+}
+body {
+	display: flex;
+	flex-flow: column;
+	min-height: 95vh;
+	background-color: #EDF7FF;
+}
+div.main {
+	flex: 1;
+}
+#drophere{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: dashed black;
+	font-size: 2rem;
+	width: 18em;
+	height: 9rem;
+	text-align: center;
+	background-color: rgba(244, 244, 244, 0.75);
+}
+.drophere-text{
+	position: relative;
+	top: 5%;
+	height: 50%
+}
+.container{
+	display: flex;
+}
+.row{
+	flex-direction: row;
+	margin: 0.5em;
+	padding: 0.2em;
+	border: solid black;
+ }
+ .col{
+	flex-direction: column;
+ }
+img.col{
+	object-fit: contain;
+}

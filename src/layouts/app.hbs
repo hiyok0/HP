@@ -1,7 +1,9 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd"￥>
 <html>
 <head>
-	{{> defaultHead }}
+	<!-- favicon等                  --><link rel="icon" type="image/x-icon" href="/favicon.ico">
+	<!-- 文字コード宣言               --><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<!-- アイコン用　remix icon 2.5.0 --><link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 	<title>{{ titleJa }} - hiyokoのHP</title>
 	{{> ogpTagExceptOgImage }}
 	<meta property="og:image" content="https://hiyoko.pages.dev/assets/ogp-simple.png">
@@ -16,10 +18,7 @@
 		{{> header }}
 		</div>
 	</header>
-	<div class="body">
-	<h1>{{ titleJa }}</h1>
 	{{{ contents }}}
-	</div>
 	<footer>{{> footer }}</footer>
 	{{> CloudflareAnalyticsSnippet }}
 </body>
