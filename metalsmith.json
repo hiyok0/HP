@@ -20,7 +20,8 @@
 				"author": "hiyoko",
 				"overview": "著者が入力をサボりました。なので概要はありません。",
 				"toc": true,
-				"ogType": "article"
+				"ogType": "article",
+				"ogImage": "https://hiyoko.pages.dev/assets/ogp-simple.png"
 				}
 			}],
 		
