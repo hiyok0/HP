@@ -1,0 +1,6 @@
+.container{
+	display: flex;
+}
+[id$="col"]{
+	flex-direction: row;
+}
