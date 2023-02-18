@@ -1,6 +1,7 @@
 const reader = new FileReader();
 const viewer = {
 	"bodyElement": document.getElementsByTagName("body")[0],
+	"elementForComments": document.createElement("div"),
 	"fragmentForComments": document.createDocumentFragment(),
 	"main": function(data){
 		document.getElementById("dropzone").setAttribute("style", "display: none");//ここにドロップを消す
@@ -46,7 +47,9 @@ const viewer = {
 			}
 			viewer.fragmentForComments.append(commentElement);
 		}
-		viewer.bodyElement.append(viewer.fragmentForComments);
+		viewer.elementForComments.classList.add("viewer");
+		viewer.bodyElement.append(viewer.elementForComments);
+		viewer.elementForComments.append(viewer.fragmentForComments);
 	}
 }
 viewer.bodyElement.classList.add("container");
@@ -63,6 +66,7 @@ document.getElementById("dropzone").addEventListener("drop", function () {
 	event.preventDefault();
 	this.style.backgroundColor = "#b3ffe6";
 	if (event.dataTransfer.files.length > 0) {
+		document.getElementById("controller").style.display = "block";
 		document.getElementById("userfile").files = event.dataTransfer.files;
 		document.getElementById("userfile").onchange();
 	}
@@ -73,6 +77,17 @@ document.getElementById("dropzone").addEventListener("click", function () {
 	event.preventDefault();
 	document.getElementById("userfile").click();
 });
+const sort = {
+	"lowToHigh": function(){
+		sort.sort(true);
+	},
+	"highToLow": function(){
+		sort.sort(false);
+	},
+	"sort": function(sort){
+		document.getElementById("overwriteCss").textContent = ".viewer{flex-direction: " + [ sort ? "column" : "column-reverse" ] + "}";
+	}
+}
 
 //read file
 document.getElementById("userfile").onchange = function () {

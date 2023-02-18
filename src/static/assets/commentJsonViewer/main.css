@@ -29,6 +29,23 @@ div.main {
 	top: 5%;
 	height: 50%
 }
+#controller{display: none;}
+[class^="button-"]{
+	height: 2.25em;
+	width: 10em;
+	margin: 0.2em;
+}
+.button-blue{
+	color: snow;
+	background-color: mediumblue;
+}
+.button-red{
+	background-color: red;
+}
+.viewer{
+	display: flex;
+	flex-direction: column;
+}
 .container{
 	display: flex;
 }
@@ -37,9 +54,6 @@ div.main {
 	margin: 0.5em;
 	padding: 0.2em;
 	border: solid black;
- }
- .col{
-	flex-direction: column;
  }
 img.col{
 	object-fit: contain;

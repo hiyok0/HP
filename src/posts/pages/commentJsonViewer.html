@@ -10,17 +10,24 @@ link: page
 ogImage: https://hiyoko.pages.dev/assets/commentJsonViewer/ogp.png
 ---
 <link href="/assets/commentJsonViewer/main.css" rel="stylesheet">
+<style id="overwriteCss"></style>
 <div id="dropzone" class="main">
 	<h1>{{ titleJa }}</h1>
 	<div id="discription">
-		<p>わんコメのcomment.jsonを見やすく表示します。<A href="https://onecomme.com/docs/developer/comment-json">comment.jsonの保存場所は公式ドキュメントをご確認ください。</A></p>
-		<p>このツールは、嗜好領域さんの<A href=https://cheerzon.jpn.org/for_onecomme/comments_view.drop>comments.log Viewer</A>に影響を受けて作りました（自白）。</p>
-		<p>comment.json以外を入れることは全く想定していないため、変なものを入れてバグってしまった場合は再読み込み（更新）してください。</p>
+		<p>
+			わんコメのcomment.jsonを見やすく表示します。<A href="https://onecomme.com/docs/developer/comment-json">comment.jsonの保存場所は公式ドキュメントをご確認ください。</A><br />
+			このツールは、嗜好領域さんの<A href="https://cheerzon.jpn.org/for_onecomme/comments_view.drop">comments.log Viewer</A>に影響を受けて作りました（自白）。<br />
+			comment.json以外を入れることは全く想定していないため、変なものを入れてバグってしまった場合は再読み込み（更新）してください。
+		</p>
 	</div>
 	<div id="drophere">
 		<div class="drophere-text">ここにcomment.jsonをドロップ<i class="ri-drag-drop-line"></i></div>
 		<div class="drophere-text">もしくはこの辺をクリック<i class="ri-cursor-fill"></i></div>
 	</div>
+</div>
+<div id="controller">
+	<button class="button-blue" type="button" onclick="sort.lowToHigh();">昇順にする</button>
+	<button class="button-red"  type="button" onclick="sort.highToLow();">降順にする</button>
 </div>
 <input id="userfile" type="file" hidden="true" />
 <script src="/assets/commentJsonViewer/main.js"></script>
