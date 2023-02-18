@@ -20,6 +20,7 @@ const viewer = {
 			const userId = document.createElement("div");
 			const screenName = document.createElement("div");
 			const commentText = document.createElement("div");
+			const timestamp = document.createElement("div");
 			const misc = document.createElement("div");
 			const color = document.createElement("div");
 			
@@ -35,11 +36,12 @@ const viewer = {
 			userId.textContent = "User ID: "+comment.data.userId;
 			screenName.textContent = comment.data.name;
 			commentText.innerHTML = comment.data.comment;
+			timestamp.textContent = "投稿日時: "+viewer.date(comment.data.timestamp);
 			misc.textContent = `hasGift: ${comment.data.hasGift}　 　isOwner: ${comment.data.isOwner}　 　isModerator: ${comment.data.isOwner}　 　isMember: ${comment.data.isMember}`;
 			color.innerHTML = `rgb(${comment.color.r}, ${comment.color.g}, ${comment.color.b})　<span style="color:rgb(${comment.color.r},${comment.color.g},${comment.color.b}); font-size: 2em;">■</span>`
 			
 			//fragmentに追加
-			for(const element of [service, url, liveId, userId, screenName, commentText, misc, color]){
+			for(const element of [service, url, liveId, userId, screenName, commentText, timestamp, misc, color]){
 				textElement.appendChild(element);
 			}
 			for(const element of [img, textElement]){
@@ -50,6 +52,10 @@ const viewer = {
 		viewer.elementForComments.classList.add("viewer");
 		viewer.bodyElement.append(viewer.elementForComments);
 		viewer.elementForComments.append(viewer.fragmentForComments);
+	},
+	"date": function(timestamp){
+		const date = new Date(timestamp);
+		return date.toLocaleDateString()+" "+date.toTimeString()+"　/　GMT,ISO: "+date.toISOString();
 	}
 }
 viewer.bodyElement.classList.add("container");
