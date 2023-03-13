@@ -79,7 +79,7 @@ document.getElementById("dropzone").addEventListener("drop", function () {
 });
 
 //click
-document.getElementById("dropzone").addEventListener("click", function () {
+document.getElementById("drophere").addEventListener("click", function () {
 	event.preventDefault();
 	document.getElementById("userfile").click();
 });
