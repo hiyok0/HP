@@ -1,6 +1,6 @@
 ---
 title: comment-json-viewer-001
-titleJa: comment.json閲覧器@0.2.0
+titleJa: comment.json閲覧器@0.2.2
 overview: わんコメのcomment.jsonを読む。
 collection: page
 tags: onecomme, json, javascript, html
@@ -28,6 +28,7 @@ ogImage: https://hiyoko.pages.dev/assets/commentJsonViewer/ogp.png
 <div id="controller">
 	<button class="button-blue" type="button" onclick="sort.lowToHigh();">昇順にする</button>
 	<button class="button-red"  type="button" onclick="sort.highToLow();">降順にする</button>
+	<button class="button-yellow"  type="button" onclick="location.reload();">再読込する</button>
 </div>
 <input id="userfile" type="file" hidden="true" />
 <script src="/assets/commentJsonViewer/main.js"></script>

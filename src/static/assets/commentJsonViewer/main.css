@@ -42,6 +42,9 @@ div.main {
 .button-red{
 	background-color: red;
 }
+.button-yellow{
+	background-color: gold;
+}
 .viewer{
 	display: flex;
 	flex-direction: column;
