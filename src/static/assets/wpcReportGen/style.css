@@ -1,0 +1,46 @@
+body{
+	font-size: 1.4rem;
+}
+body, body *{
+	margin: 0;
+}
+a.tui-tab:not(.active):hover::before{
+	content: "（";
+}
+a.tui-tab:not(.active):hover::after{
+	content: "）";
+}
+div.main-area{
+	margin: 10px;
+}
+#main-tab > div.main-area{
+	display: flex;
+	justify-content: space-between;
+}
+div.check-area, div.result-area{
+	width: 50%;
+	min-width: 30rem;
+}
+div.check-area{
+	margin-right: 10px;
+}
+label.tui-checkbox::before, label.tui-radio::before{
+	content: "　";
+}
+textarea{
+	min-width: 100%;
+}
+pre#result-text{
+	height: 40.8em;
+}
+h2{
+	margin-top: 1.5em;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow: auto;
+}
+p.about{
+	padding-left: 1.5em;
+}

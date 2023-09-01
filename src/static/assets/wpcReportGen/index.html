@@ -1,0 +1,169 @@
+<!DOCTYPE html >
+<html xml:lang="ja" lang="ja" >
+
+<head>
+	<title>Word Party Controller Report Generator</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<script src="./script.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/tuicss@2.1.2/dist/tuicss.min.js"></script>
+	<link href="./style.css" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/tuicss@2.1.2/dist/tuicss.min.css" rel="stylesheet">
+</head>
+<body class="white-168">
+	<h1 class="black-168-text cyan-168 center">Word Party Controller レポートジェネレータ</h1>
+	<div class="tui-tabs">
+		<ul>
+			<li><a class="tui-tab active" data-tab-content="main-tab">Main</a></li>
+			<li><a class="tui-tab disabled">How to use</a></li>
+			<li><a class="tui-tab" data-tab-content="about-tab">About</a></li>
+			<li><a class="tui-tab" data-tab-content="oss-licenses-tab">Open Source Licenses</a></li>
+		</ul>
+	</div>
+	<div id="main-tab" class="tui-tab-content">
+		<div class="main-area">
+			<div class="check-area">
+				<fieldset class="tui-fieldset tui-border-solid black-168-border">
+					<legend>ここでチェックを入れる</legend>
+					<button class="tui-button" onclick="kesu.clear()">全てクリア</button>
+					<div style="height:1em;"><!--本当はよくない--></div>
+					<div>
+						<fieldset class="tui-fieldset tui-border-solid black-168-border">
+							<legend>報告の種類</legend>
+							<div>
+								<div>OS等</div>
+								<label class="tui-radio">正常
+									<input type="radio" name="report-type" value="regular" />
+									<span></span>
+								</label>
+								<label class="tui-radio">異常
+									<input type="radio" name="report-type" value="irregular" />
+									<span></span>
+								</label>
+								<label class="tui-radio">その他
+									<input type="radio" name="report-type" value="other" />
+									<span></span>
+								</label>
+								<br />
+								<div>備考(optional)</div>
+								<input class="tui-input full-width" type="text" name="report-type-misc" />
+							</div>
+						</fieldset>
+						<fieldset class="tui-fieldset tui-border-solid black-168-border">
+							<legend>環境</legend>
+							<div>
+								<div>OS等</div>
+								<label class="tui-radio">macOS (intel)
+									<input type="radio" name="os-name" value="intelMac" />
+									<span></span>
+								</label>
+								<label class="tui-radio">macOS (arm)
+									<input type="radio" name="os-name" value="armMac" />
+									<span></span>
+								</label>
+								<label class="tui-radio">Windows 10/11 (x86_64/amd64)
+									<input type="radio" name="os-name" value="win" />
+									<span></span>
+								</label>
+								<label class="tui-radio">Windows 11 (arm)
+									<input type="radio" name="os-name" value="winarm" />
+									<span></span>
+								</label>
+								<br />
+								<div>細かいバージョン(optional)</div>
+								<input class="tui-input full-width" type="text" name="os-name-misc" />
+							</div>
+						</fieldset>
+						<fieldset class="tui-fieldset tui-border-solid black-168-border">
+							<legend>アプリのバージョン</legend>
+							<table>
+								<tr>
+									<td class="right">
+										WP Controller: 
+									</td>
+									<td>
+										<input class="tui-input" type="text" name="wpc-ver" />
+									</td>
+								</tr>
+								<tr>
+									<td class="right">
+										OneComme: 
+									</td>
+									<td>
+										<input class="tui-input" type="text" name="onecomme-ver" />
+									</td>
+								</tr>
+							</table>
+						</fieldset>
+						<fieldset class="tui-fieldset tui-border-solid black-168-border">
+							<legend>発火方法</legend>
+							<label class="tui-checkbox">TypeA
+								<input type="checkbox" name="fire-type" value="TypeA"/>
+								<span></span>
+							</label>
+							<label class="tui-checkbox">TypeB
+								<input type="checkbox" name="fire-type" value="TypeB"/>
+								<span></span>
+							</label>
+							<label class="tui-checkbox">ボタンクリック
+								<input type="checkbox" name="fire-type" value="ボタンクリック"/>
+								<span></span>
+							</label>
+							<label class="tui-checkbox">リモートクリック
+								<input type="checkbox" name="fire-type" value="リモートクリック" />
+								<span></span>
+							</label>
+						</fieldset>
+						<fieldset class="tui-fieldset tui-border-solid black-168-border">
+							<legend>詳細(optional)</legend>
+							<textarea class="tui-textarea" rows="5" name="text-details"></textarea>
+						</fieldset>
+					</div>
+				</fieldset>
+			</div>
+			<div class="result-area">
+				<fieldset class="tui-fieldset tui-border-solid black-168-border">
+					<legend>生成結果</legend>
+					<button class="tui-button" onclick="report.saveToClipboard()">クリップボードにコピー</button>
+					<div style="height:1em;"><!--本当はよくない--></div>
+					<div class="cyan-168 black-168-text full-width"><pre id="result-text"></pre></div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+	<div id="about-tab" class="tui-tab-content">
+		<div class="main-area">
+			<div>
+				<h2>このツールについて</h2>
+				<p class="about">Word Party Controller の報告がどうしてもサボりがちになってしまうため、それならまずテンプレートを作ってみようとなり作りました。
+				</p>
+				<p class="about">嗜好領域さんのわんコメ用報告ツール（<a class="cyan-168-hover" href="https://cheerzon.jpn.org/for_onecomme/betatest5.x">5.x用</a>・<a class="cyan-168-hover" href="https://cheerzon.jpn.org/for_onecomme/betatest4.x">4.x用</a>）の影響を受けています。
+				</p>
+			</div>
+			<div>
+				<h2>ライセンス</h2>
+				<p class="about">オリジナル部分に関しては好きにしていいです。ライブラリを使っているので、それらの部分はそちらの規約を確認してください。</p>
+			</div>
+		</div>
+	</div>
+	<div id="oss-licenses-tab" class="tui-tab-content">
+		<div class="main-area">
+			<div class="">
+					<fieldset class="tui-fieldset tui-border-solid black-168-border">
+					<legend><a class="cyan-168-hover" href="https://github.com/vinibiavatti1/TuiCss/blob/master/LICENSE.md">TuiCss</a></legend>
+					<div class="full-width"><pre>
+MIT License
+
+Copyright (c) 2019 Vinicius Reif Biavatti
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+					</pre></div>
+				</fieldset>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
