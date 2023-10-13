@@ -1,0 +1,52 @@
+---
+title: lolicom-replace-001
+titleJa: ロリコン☆野プレイサー@0.0.1
+overview: 本野イジリをより容易に
+collection: page
+tags: 内輪ノリ
+date: 2023-10-14
+layout: app.hbs
+link: page
+---
+<style>
+html{
+	min-width: 600px;
+	min-height: 710px;
+
+}
+body {
+	display: flex;
+	flex-flow: column;
+	min-height: 95vh;
+	background-color: #EDF7FF;
+}
+#text{
+	width: 20em;
+}
+</style>
+<script>
+	const replace = {
+		lo: /(ロ|ろ|ﾛ)/g,
+		li: /(リ|り|ﾘ)/g,
+		co: /(コ|こ|ｺ)/g,
+		nn: /(ン|ん|ﾝ)/g,
+		main: function(){
+			document.getElementById("text").value = replace.replaceAll(document.getElementById("text").value);
+		},
+		replaceAll: function(src){
+			return src.replaceAll(replace.lo, "​本​").replaceAll(replace.li, "​野​").replaceAll(replace.co, "​​詩​​").replaceAll(replace.nn, "​​織​​");
+		}
+	}
+</script>
+<h1>ロリコン☆野プレイサー</h1>
+<p>
+	<label for="name">置き換えたいテキストを入力してください: </label><br />
+	<input type="text" id="text" />
+	<button onclick="replace.main();">変換！</button>
+</p>
+<div>
+	<ul>
+		<li>かな文字のみ置き換えます。</li>
+		<li>雑な作りなのでおそらくバグなども残ってます。</li>
+	</ul>
+</div>
