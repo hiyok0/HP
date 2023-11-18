@@ -27,7 +27,7 @@
 			{{#each pagination.files}}
 			<tr>
 				<td><i class="ri-pages-line"></i></td>
-				<td><a href=/blog/{{dateFormat date "YYYY"}}/{{title}}>{{titleJa}}</a></td>
+				<td><a href=/blog/{{dateFormat date "YYYY"}}/{{changeCase title lower}}>{{titleJa}}</a></td>
 				<td>{{dateFormat date "YYYY/MM/DD"}}</td>
 			<tr>
 			{{/each}}
