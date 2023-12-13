@@ -91,7 +91,7 @@ link: page
 		generate: function(url=control.elements.input.value){
 			const output = control.base + url;
 			control.elements.output.textContent = output;
-			control.elements.tweet.setAttribute("href", output);
+			control.elements.tweet.setAttribute("href", "https://twitter.com/intent/tweet?text=" + output);
 		},
 		clipboard: function(){
 			navigator.clipboard.writeText(control.elements.output.textContent);
