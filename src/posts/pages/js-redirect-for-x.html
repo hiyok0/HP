@@ -1,0 +1,102 @@
+---
+title: js-redirect-for-x
+titleJa: YTとかのリンクをツイートする用
+overview: 一部ドメインのリンクを含むツイートが表示されないらしいので、これならどうかと実験してみることにした。
+collection: page
+tags: javascript, html, twitter
+date: 2023-12-13
+layout: app.hbs
+link: page
+---
+<script>
+	(function(){
+		const search = location.search.replace("?", "").split("&")
+		while(search.length){
+			const query = search.shift();
+			if(query.startsWith("link=")){
+				location.href = query.replace("link=", "") + "&" + search.join("")
+			}
+		}
+	})();
+</script>
+<style>
+	#copyToClipboard{
+		margin-left: 0.8em;
+	}
+	#copyToClipboard, #tweet{
+		padding: 0.3em;
+		font-size: 2em;
+		text-align: right;
+		vertical-align: top;
+		color: black;
+		text-decoration: none;
+		cursor: pointer;
+	}
+	#copyToClipboard:hover, #tweet:hover{
+		background-color: rgba(0,0,0,0.3);
+	}
+	#copyToClipboard:active, #tweet:active{
+		background-color: rgba(0,0,0,0.8);
+	}
+	#out{
+		display: inline flow-root;
+		max-width: 90%;
+		word-break: keep-all;
+		overflow: hidden;
+	}
+	.outbox{
+		background-color: #FFEFC6;
+		padding: 1.5em;
+	}
+	#raw{
+		width: 63em;
+		max-width: 90%;
+	}
+	.twitter-tweet{
+		border: solid;
+	}
+	body{
+		background-color: #EDF7FF;
+	}
+</style>
+
+<h1>{{ titleJa }}</h1>
+<h2>リンク生成</h2>
+<p>
+	<label for="text">置き換えたいテキストを入力してください: </label><br />
+	<input type="text" id="raw" name="text" placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" />
+	<button onclick="control.generate();">変換！</button><br />
+	<div class="outbox">
+		<span id="out"></span>
+		<i class="ri-clipboard-line" id="copyToClipboard"></i>
+		<a href="#" target="_blank" id="tweet"><i class="ri-twitter-line"></i></a>
+	</div>
+</p>
+<h2>注意</h2>
+<p>主に自分用に雑に作ったので、ところどころバグ等あると思います。利用は自己責任でお願いします。</p>
+<p>お気づきの点等ございましたら、お気軽に<a id="mentionOnTwitter" href="https://twitter.com/intent/tweet?text=%40Jewel_Flash%20{{origin}}/{{path}}">X(formerly Twitter)@Jewel_Flash</a>等までご連絡ください。</p>
+<h2>きっかけ</h2>
+<p>次のツイートを見かけたので</p>
+<blockquote class="twitter-tweet" data-lang="en" data-dnt="true"><p lang="ja" dir="ltr">X(Twitter)の一部ユーザーにて外部URL付きポストが表示、通知されない問題が生じています。<br>現在分かっていることをまとめました。<br><br>以下に表示されないURLと表示されるURLをまとめました。<br><br>✅表示されないURL<br>・Google(YouTube、Googleフォーム含む)<br>・Amazon(Twitch含む)<br>・Facebook<br>・TikTok… <a href="https://t.co/KVLCHdFzPA">https://t.co/KVLCHdFzPA</a> <a href="https://t.co/jBqpP0h2Nh">pic.twitter.com/jBqpP0h2Nh</a></p>&mdash; 高遠 頼@生命科学VTuber(たかとー らい)🧬 🔬 🥼 (@takatoh_life) <a href="https://twitter.com/takatoh_life/status/1734064949876674572?ref_src=twsrc%5Etfw">December 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+
+<script>
+	const control = {
+		base: location.origin + location.pathname + "?link=",
+		elements: {
+			input: document.getElementById("raw"),
+			output: document.getElementById("out"),
+			copyToClipboard: document.getElementById("copyToClipboard"),
+			tweet: document.getElementById("tweet")
+		},
+		generate: function(url=control.elements.input.value){
+			const output = control.base + url;
+			control.elements.output.textContent = output;
+			control.elements.tweet.setAttribute("href", output);
+		},
+		clipboard: function(){
+			navigator.clipboard.writeText(control.elements.output.textContent);
+		}
+	}
+	control.elements.copyToClipboard.onclick = control.clipboard;
+	control.generate(control.elements.input.placeholder);
+</script>
