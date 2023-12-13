@@ -21,7 +21,8 @@
 				"overview": "著者が入力をサボりました。なので概要はありません。",
 				"toc": true,
 				"ogType": "article",
-				"ogImage": "https://hiyoko.pages.dev/assets/ogp-simple.png"
+				"ogImage": "https://hiyoko.pages.dev/assets/ogp-simple.png",
+				"origin": "https://hiyoko.pages.dev"
 				}
 			}],
 		
