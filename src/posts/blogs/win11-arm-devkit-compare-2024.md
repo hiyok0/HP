@@ -1,6 +1,6 @@
 ---
 title: compare-win11-arm-dev-kit
-titleJa: ARMなWindows11のDevKitを比較してみた
+titleJa: ARMなWindows11のDevKitのカタログスペックを比較してみた
 overview: とりあえず２つ。デスクトップを中心に
 collection: blog
 tags: windows, arm, arm64, snapdragon, windows11, windows11pro
