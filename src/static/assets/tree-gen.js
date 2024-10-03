@@ -108,6 +108,7 @@ const tree = {
 	}
 }
 
+//event listener
 editors.inputArea.addEventListener("input", (function(event){
 	editors.outputArea.value = tree.makeAa(tree.parseIndent(editors.inputArea.value));
 }));
@@ -116,6 +117,7 @@ editors.inputArea.onchange = function(){
 }
 inputElements.isHorizontalHeavy.onclick = function(event){
 	editors.outputArea.value = tree.makeAa(tree.parseIndent(editors.inputArea.value));
+	editors.outputArea.placeholder = tree.makeAa(tree.parseIndent(editors.inputArea.placeholder));
 	editors.inputArea.onchange();
 };
 inputElements.isVerticalHeavy.onclick = inputElements.isHorizontalHeavy.onclick;
@@ -129,6 +131,10 @@ inputElements.autosave.onchange = function(){
 	inputElements.copyButton.click();
 }
 editors.outputArea.readOnly = true;
+
+//placeholder
+editors.inputArea.placeholder = "せかいい\n\tせかいい\n\t\t公開\n\t\t\ttwitter\n\t\t\ttwitter\n\t\t\ttwitter\n\t\t鍵垢\n\t\t\ttwitter\n\t\t\ttwitter\n\thiyoko",
+inputElements.isHorizontalHeavy.onclick();
 
 //for debug
 document.getElementById("copyDebugDataToClipboard").onclick = function(){
