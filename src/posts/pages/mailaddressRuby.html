@@ -1,0 +1,32 @@
+---
+title: mailaddress-ruby-gen
+titleJa: メアドルビジェネレータ
+overview: 元ネタ：令和７年４月２１日以降に所有権の移転の登記の申請をする場合の記載例
+collection: page
+tags: 一発ネタ
+date: 2025-01-14
+layout: app.hbs
+link: page
+---
+<link href="/assets/mailaddressRuby/style.css" rel="stylesheet" />
+<script src="/assets/mailaddressRuby/script.js"></script>
+
+<h1>{{titleJa}}</h1>
+<div style="display:flex;justify-content:center;width:100%;"><div id="app">
+	<table><tbody>
+		<tr id="birthdateRow">
+			<td>生年月日</td>
+			<td id="birthdate"></td>
+		</tr>
+		<tr>
+			<td><label for="email">メールアドレス</label></td>
+			<td><input type="email" id="email" /></td>
+		</tr>
+		<tr>
+			<td>メールアドレスフリガナ</td>
+			<td id="emailRuby"></td>
+		</tr>
+	</tbody></table>
+	<div><button type="button" onclick="emailToRuby.convert();">変換！</button></div>
+	<div id="message"></div>
+</div></div>

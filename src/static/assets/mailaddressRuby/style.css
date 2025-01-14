@@ -1,0 +1,49 @@
+input{
+	width: 100%;
+	height: 100%;
+}
+
+#message{
+	color: firebrick;
+}
+
+#birthdate{
+	-webkit-appearance: none;
+	appearance: none;
+	vertical-align: middle;
+	color: inherit;
+	font: inherit;
+	background: transparent;
+	padding: 0;
+	margin: 0;
+	border-radius: 0;
+	text-align: inherit;
+	text-transform: inherit;
+	width:100%;
+	height: 100%
+}
+
+#email{
+	border-style: none;
+	background-color: transparent;
+}
+#app{
+	margin: 3em auto;
+}
+#app > table > tbody > tr > td{
+	border-width: thin;
+	border-style: none solid solid none;
+	border-color: black;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+#app > table > tbody > tr:nth-child(1) > td{
+	border-top-style: solid;
+}
+#app > table > tbody > tr > td:nth-child(1){
+	border-left-style: solid;
+	width: 15em;
+}
+#app > table > tbody > tr > td:nth-child(2){
+	width: 30em;
+}
