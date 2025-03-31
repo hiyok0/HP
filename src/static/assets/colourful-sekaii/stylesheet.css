@@ -1,0 +1,29 @@
+img{
+	display: block;
+}
+body{
+	width: 100vw;
+	background-image: url("images/background.png");
+	background-repeat: repeat;
+}
+h1, h2, h3, h4, h5, h6{
+	color: #ee6e73;
+}
+
+#introduction{
+	margin: 0 auto;
+}
+.hero{
+	width: 100%;
+	margin: 0 auto;
+}
+#mainContent{
+	max-width: 60rem;
+	margin: 3rem auto 0;
+}
+p.story{
+	background-color: snow;
+}
+img.charaImage{
+	margin-top: 2.4rem;
+}
