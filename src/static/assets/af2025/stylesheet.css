@@ -10,6 +10,12 @@ h1, h2, h3, h4, h5, h6{
 	color: #ee6e73;
 }
 
+ul.disclaimer{
+	margin: 0;
+}
+li.disclaimer{
+	background-color: snow;
+}
 #introduction{
 	margin: 0 auto;
 }

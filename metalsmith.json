@@ -110,7 +110,12 @@
 		 "metalsmith-assets": {
 			"source": "src/static",
 			"destination": "./"
-			}
+			},
 
+		 "metalsmith-redirect": {
+			 "redirections": {
+					"/assets/colourful-sekaii/": "/assets/af2025/"
+				 }
+			 }
 		}]
 	}
